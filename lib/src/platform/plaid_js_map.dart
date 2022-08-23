@@ -34,6 +34,7 @@ class Configuration {
   external String get oauthRedirectUri;
   external String get oauthStateId;
   external String get token;
+  external String get receivedRedirectUri;
   external String get paymentToken;
 
   external String get userLegalName;
@@ -53,6 +54,7 @@ class Configuration {
     String? oauthRedirectUri,
     String? oauthStateId,
     String? token,
+    String? receivedRedirectUri,
     String? paymentToken,
     String? userLegalName,
     String? userEmailAddress,

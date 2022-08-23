@@ -47,6 +47,7 @@ class PlaidFlutterPlugin {
 
   void open(Map<dynamic, dynamic> arguments) {
     final String? token = arguments['token'];
+    final String? receivedRedirectUri = arguments['receivedRedirectUri'];
     final String? publicKey = arguments['publicKey'];
     final String? clientName = arguments['clientName'];
     final String? environment = arguments['environment'];
@@ -69,6 +70,7 @@ class PlaidFlutterPlugin {
     Configuration options = Configuration(
       clientName: clientName,
       token: token,
+      receivedRedirectUri: receivedRedirectUri,
       key: publicKey,
       env: environment,
       product: products,

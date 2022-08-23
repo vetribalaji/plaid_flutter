@@ -14,10 +14,23 @@ class LinkTokenConfiguration implements LinkConfiguration {
 
   final bool noLoadingState;
 
-  LinkTokenConfiguration({required this.token, this.noLoadingState = false});
+  final String? receivedRedirectUri;
+
+  LinkTokenConfiguration(
+      {required this.token,
+      this.noLoadingState = false,
+      this.receivedRedirectUri = null});
 
   /// Returns a representation of this object as a JSON object.
   Map<String, dynamic> toJson() {
+    if (receivedRedirectUri != null && receivedRedirectUri!.length > 0) {
+      return <String, dynamic>{
+        'token': token,
+        'noLoadingState': noLoadingState,
+        'receivedRedirectUri': receivedRedirectUri,
+      };
+    }
+
     return <String, dynamic>{
       'token': token,
       'noLoadingState': noLoadingState,
